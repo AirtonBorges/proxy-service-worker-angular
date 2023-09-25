@@ -4,11 +4,11 @@
   "assetGroups": [
     {
       "name": "assets",
-      "installMode": "lazy",
-      "updateMode": "prefetch",
+      "installMode": "prefetch",
       "resources": {
         "files": [
-          "/app/versao.js"
+          "/app/versao.js",
+          "/manifest.webmanifest"
         ]
       }
     }
