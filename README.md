@@ -1,27 +1,27 @@
-# ProxyServiceWorker
+# Teste de front end angular com service worker e proxy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+- Teste tem o intuito de descobrir se o proxy reverso de um service worker angular é capaz de não cachear as requisições http que passam pelo proxy do service worker
 
-## Development server
+## Passos:
+- Dar git clone nesse repositório ou abrir um codespaces
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Após isso, rodar ng build, recomendado usar o watch
+```powershell 
+ng build --watch
+```
 
-## Code scaffolding
+- após isso, em outra aba do terminal, no diretório raiz do projeto:
+```powershell
+cd dist/proxy-service-worker
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- então:
+```powershell
+http-server -c-1 --proxy
+ "https://www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new"
+``` 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Editar o versao.ts, e salvar
+    - É feito o build, o service worker obtém a nova versão
+    - A página é atualizada automáticamente
+    - Um novo número aleatório é obtido
