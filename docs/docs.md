@@ -4,17 +4,7 @@
 
 - Usada biblioteca http-server para realizar o teste
 - Comando:
-```sql
-
-  "dataGroups": [
-    {
-      "name": "default",
-      "urls": [],
-      "cacheConfig": {
-        "strategy": "freshness",
-        "maxSize": 0,
-        "maxAge": "0u"
-      }
-    }
-  ]
+```powershell
+http-server -c-1 --proxy
+ "https://www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new"
 ``` 
